@@ -20,7 +20,7 @@ from pysettings import conf
 class PathMapWindow(BaseWidget):
 
 	def __init__(self, parent=None):
-		super(PathMapWindow, self).__init__('Smooth paths', parent_win=parent)
+		super(PathMapWindow, self).__init__('Path map', parent_win=parent)
 		self.mainwindow = parent
 
 		self.layout().setMargin(5)

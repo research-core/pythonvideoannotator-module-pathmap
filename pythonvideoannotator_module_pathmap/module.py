@@ -13,5 +13,5 @@ class Module(object):
 		self.pathmap_window = PathMapWindow(self)
 
 		self.mainmenu[1]['Modules'].append(
-			{'Path map': self.pathmap_window.show, 'icon':conf.ANNOTATOR_ICON_SMOOTH },			
+			{'Path map': self.pathmap_window.show, 'icon':conf.ANNOTATOR_ICON_PATHMAP },			
 		)
