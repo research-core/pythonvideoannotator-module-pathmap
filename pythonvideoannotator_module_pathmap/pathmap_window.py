@@ -23,7 +23,11 @@ class PathMapWindow(BaseWidget):
 		super(PathMapWindow, self).__init__('Path map', parent_win=parent)
 		self.mainwindow = parent
 
-		self.layout().setMargin(5)
+		if conf.PYFORMS_USE_QT5:
+			self.layout().setContentsMargins(5,5,5,5)
+		else:
+			self.layout().setMargin(5)
+		
 		self.setMinimumHeight(400)
 		self.setMinimumWidth(800)
 
