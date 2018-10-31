@@ -1,2 +1,6 @@
 *.pyc
 Python_video_annotator_module_path_map\.egg-info/
+
+build/
+
+dist/
