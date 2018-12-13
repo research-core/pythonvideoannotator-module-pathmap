@@ -76,13 +76,19 @@ class PathMapWindow(BaseWidget):
     def __apply_event(self):
 
         if self._apply.checked:
-            
+
+            if len(self.datasets_dialog.datasets)==0:
+                self.message('You have to select a Path or a Contour', 'Error', 'error')
+                self._apply.checked=False
+                return
+
             self._datasets_panel.enabled = False            
             self._apply.label           = 'Cancel'
 
             total_2_analyse  = 0
             for video, (begin, end), datasets in self.datasets_dialog.selected_data:
                 total_2_analyse += (end-begin+1)*len(datasets)
+
 
             self._progress.min = 0
             self._progress.max = total_2_analyse
@@ -122,9 +128,6 @@ class PathMapWindow(BaseWidget):
                 image = video.create_image()
                 image.name = 'pathmap-{0}'.format(len(list(video.images)))
                 image.image = color
-
-                    
-                    
 
                 
 
