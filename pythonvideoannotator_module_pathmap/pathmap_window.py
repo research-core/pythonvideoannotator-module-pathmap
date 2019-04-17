@@ -109,8 +109,11 @@ class PathMapWindow(BaseWidget):
                         pos = dataset.get_position(index)
                         if pos is None: continue
 
+                        pos = int(round(pos[0],0)), int(round(pos[1],0))
+
                         tmp = np.zeros_like(counter_img)
-                        cv2.circle(tmp, pos, int(self._radius.value), 1.0, -1)
+
+                        cv2.circle(tmp, pos, int(self._radius.value), 1, -1)
                         counter_img += tmp
 
                         if (index % 31) == 0:
